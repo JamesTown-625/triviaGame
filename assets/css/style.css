@@ -20,15 +20,21 @@ button {
 	padding: 15px 90px;
 }
 
+.panel {
+	background-color: rgba(139, 0, 0, .30);
+	width: 1200px;
+	margin-left: 100px;
+}
 
 h1 {
 	color: red;
 	text-align: center;
+	font-size: 48px;
 }
 
 h2 {
 	color: white;
-	font-size: 36px;
+	font-size: 40px;
 	font-style: bold;
 }
 

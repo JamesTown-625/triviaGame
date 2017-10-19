@@ -4,47 +4,47 @@ $("#start").on('click', function() {
 
 $(document).on('click', '#end',function() {
 	game.done();
-});
-
+});			
+ 
 var questions = [{
 
-	question: "What is the name of the boy that disappears in the first episode of Stranger Things, Season 1?",
+	question: "<div class='panel'>What is the name of the boy that disappears in the first episode of Stranger Things, Season 1?",
 	answers: [" Will Byers ", " Dustin Henderson ", " Mike Wheeler ", " Lucas Sinclair "],
 	correctAnswer: " Will Byers "
 },	{
-	question: "What is the name of the monster that torments the town of Hawkins, Indiana?",
-	answers: [" Demagorgon ", " Sully ", " Freddy Kruger ", " Golem "],
+	question: "<br><div class='panel'>What is the name of the monster that torments the town of Hawkins, Indiana?",
+	answers: [" Demagorgon ", " Sully ", " Freddy Krueger ", " Golem "],
 	correctAnswer: " Demagorgon " 
 },	{
-	question: "On a scale from 1 to 10 how cool is the kid that escapes Hawkins Laboratory?",
+	question: "<br><div class='panel'>On a scale from 1 to 10 how cool is the kid that escapes Hawkins Laboratory?",
 	answers: [" One ", " Seven ", " Three ", " Eleven "],
 	correctAnswer: " Eleven "
 },	{
-	question: "How does Joyce Byers keep in contact with her son?",
+	question: "<br><div class='panel'>How does Joyce Byers keep in contact with her son?",
 	answers: [" His cell phone ", " Writing him letters ", " Christmas lights ", " Facebook direct messaging "],
 	correctAnswer: " Christmas lights "
 },	{
-	question: "Why doesn't anyone care where Barb went the whole season except Nancy?",
+	question: "<br><div class='panel'>Why doesn't anyone care where Barb went the whole season except Nancy?",
 	answers: [" She bullied everyone ", " She's a red-head ", " She knew too much ", " All of the above "],
 	correctAnswer: " All of the above "
 }, {
-	question: "Where do the kids hide when the bad men come looking for them?",
+	question: "<br><div class='panel'>Where do the kids hide when the bad men come looking for them?",
 	answers: [" Steves house ", " A school bus ", " Fort Byers ", " Mikes basement "],
 	correctAnswer: " A school bus "
 }, {
-	question: "What does Nancy use to break the lock to get the hose for Elevens bath?",
+	question: "<br><div class='panel'>What does Nancy use to break the lock to get the hose for Elevens bath?",
 	answers: [" A gun ", " An axe ", " A fire extinguisher ", " A rock "],
 	correctAnswer: " A rock "
 }, {
-	question: "Where does the shows creepy opening scene take place?",
+	question: "<br><div class='panel'>Where does the shows creepy opening scene take place?",
 	answers: [" Mirkwood forest ", " A Laboratory ", " Hawkins Elementary ", " A pool party "],
 	correctAnswer: " A Laboratory "
 }, {
-	question: "What is the name of the game the boys reference throughout the season?",
+	question: "<br><div class='panel'>What is the name of the game the boys reference throughout the season?",
 	answers: [" League of Legends ", " Lord of the Rings ", " Dungeons and Dragons ", " Legend of Zelda "],
 	correctAnswer: " Dungeons and Dragons "
 }, {
-	question: "What is El's favorite food?",
+	question: "<br><div class='panel'>What is El's favorite food?",
 	answers: [" Churros ", " pop-tarts ", " Toast ", " Eggos "],
 	correctAnswer: " Eggos "
 }];
@@ -52,7 +52,7 @@ var questions = [{
 var game = {
 	correct: 0,
 	incorrect: 0,
-	counter: 60,
+	counter: 90,
 	countdown: function() {
 		game.counter--;
 		$('#counter').html(game.counter);
@@ -63,7 +63,7 @@ var game = {
 	},
 	start: function() {
 		timer = setInterval(game.countdown,1000);
-		$("#subWrapper").prepend('<h2>Time Remaining: <span id="counter">60</span> Seconds</h2>');
+		$("#subWrapper").prepend('<br><br><h2>Time Remaining: <span id="counter">90</span> Seconds</h2>');
 		$('#start').remove();
 			for (var i = 0; i < questions.length; i++) {
 				$("#subWrapper").append("<h2>" + questions[i].question+"</h2>");
@@ -153,7 +153,7 @@ var game = {
 		result: function() {
 			clearInterval(timer);
 			$('#subWrapper h2').remove();
-			$('#subWrapper').html("<h2>All Done!</h2>");
+			$('#subWrapper').html("<h2>Thanks for playing!</h2>");
 			console.log(game.correct);
 			$('#subWrapper').append("<h3>Correct Answers: "+this.correct+"</h3>");
 			console.log(game.incorrect);
