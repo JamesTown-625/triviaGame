@@ -9,7 +9,7 @@ $(document).on('click', '#end',function() {
 var questions = [{
 
 	question: "What is the name of the boy that disappears in the first episode of Stranger Things, Season 1?",
-	answers: [" Will Byers ", " Will Patton ", " Johnny Depp ", " Johnny Smith "],
+	answers: [" Will Byers ", " Dustin Henderson ", " Mike Wheeler ", " Lucas Sinclair "],
 	correctAnswer: " Will Byers "
 },	{
 	question: "What is the name of the monster that torments the town of Hawkins, Indiana?",
@@ -20,20 +20,39 @@ var questions = [{
 	answers: [" One ", " Seven ", " Three ", " Eleven "],
 	correctAnswer: " Eleven "
 },	{
-	question: "How does Will Byers Mom keep in contact with him?",
+	question: "How does Joyce Byers keep in contact with her son?",
 	answers: [" His cell phone ", " Writing him letters ", " Christmas lights ", " Facebook direct messaging "],
 	correctAnswer: " Christmas lights "
 },	{
 	question: "Why doesn't anyone care where Barb went the whole season except Nancy?",
 	answers: [" She bullied everyone ", " She's a red-head ", " She knew too much ", " All of the above "],
 	correctAnswer: " All of the above "
-
+}, {
+	question: "Where do the kids hide when the bad men come looking for them?",
+	answers: [" Steves house ", " A school bus ", " Fort Byers ", " Mikes basement "],
+	correctAnswer: " A school bus "
+}, {
+	question: "What does Nancy use to break the lock to get the hose for Elevens bath?",
+	answers: [" A gun ", " An axe ", " A fire extinguisher ", " A rock "],
+	correctAnswer: " A rock "
+}, {
+	question: "Where does the shows creepy opening scene take place?",
+	answers: [" Mirkwood forest ", " A Laboratory ", " Hawkins Elementary ", " A pool party "],
+	correctAnswer: " A Laboratory "
+}, {
+	question: "What is the name of the game the boys reference throughout the season?",
+	answers: [" League of Legends ", " Lord of the Rings ", " Dungeons and Dragons ", " Legend of Zelda "],
+	correctAnswer: " Dungeons and Dragons "
+}, {
+	question: "What is El's favorite food?",
+	answers: [" Churros ", " pop-tarts ", " Toast ", " Eggos "],
+	correctAnswer: " Eggos "
 }];
 
 var game = {
 	correct: 0,
 	incorrect: 0,
-	counter: 20,
+	counter: 60,
 	countdown: function() {
 		game.counter--;
 		$('#counter').html(game.counter);
@@ -44,7 +63,7 @@ var game = {
 	},
 	start: function() {
 		timer = setInterval(game.countdown,1000);
-		$("#subWrapper").prepend('<h2>Time Remaining: <span id="counter">120</span> Seconds</h2>');
+		$("#subWrapper").prepend('<h2>Time Remaining: <span id="counter">60</span> Seconds</h2>');
 		$('#start').remove();
 			for (var i = 0; i < questions.length; i++) {
 				$("#subWrapper").append("<h2>" + questions[i].question+"</h2>");
@@ -52,7 +71,7 @@ var game = {
 					$("#subWrapper").append("<input type='radio' name='question-"+i+"' value='"+questions[i].answers[j]+"'>"+questions[i].answers[j])
 				}
 			}
-			$("#subWrapper").append('<br><button id="end">DONE</button>');
+			$("#subWrapper").append('<br><br><br><button id="end">DONE</button>');
 		},
 
 		done: function() {
@@ -86,6 +105,41 @@ var game = {
 			});
 			$.each($('input[name="question-4"]:checked'),function() {
 				if($(this).val()==questions[4].correctAnswer){
+					game.correct++;
+				}	else {
+					game.incorrect++;
+				}
+			});
+			$.each($('input[name="question-5"]:checked'),function() {
+				if($(this).val()==questions[5].correctAnswer){
+					game.correct++;
+				}	else {
+					game.incorrect++;
+				}
+			});
+			$.each($('input[name="question-6"]:checked'),function() {
+				if($(this).val()==questions[6].correctAnswer){
+					game.correct++;
+				}	else {
+					game.incorrect++;
+				}
+			});
+			$.each($('input[name="question-7"]:checked'),function() {
+				if($(this).val()==questions[7].correctAnswer){
+					game.correct++;
+				}	else {
+					game.incorrect++;
+				}
+			});
+			$.each($('input[name="question-8"]:checked'),function() {
+				if($(this).val()==questions[8].correctAnswer){
+					game.correct++;
+				}	else {
+					game.incorrect++;
+				}
+			});
+				$.each($('input[name="question-9"]:checked'),function() {
+				if($(this).val()==questions[9].correctAnswer){
 					game.correct++;
 				}	else {
 					game.incorrect++;
